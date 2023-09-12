@@ -12,6 +12,8 @@ class MemoController extends Controller
     {
         return view('memo.create');
     }
+}
+/*
     public function create()
     {
         return redirect('memo/create');
@@ -26,4 +28,4 @@ class MemoController extends Controller
     {
         return redirect('memo/edit');
     }
-}
+*/
