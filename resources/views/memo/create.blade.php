@@ -33,9 +33,10 @@
                     <table class="table table-light">
                         <thead>
                             <tr>
-                                <th width="20%">ID</th>
+                                <th width="10%">ID</th>
                                 <th width="50%">メモ</th>
-                                <th width="30%">操作</th>
+                                <th width="20%">編集</th>
+                                <th width="20%">削除</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -45,6 +46,10 @@
                                     <td>{{ Str::limit($memo->memo, 100) }}</td>
                                     <td><div>
                                             <a href="{{ route('memo.edit', ['id' => $memo->id]) }}">編集</a>
+                                        </div>
+                                    </td>
+                                    <td><div>
+                                            <a href="{{ route('memo.delete', ['id' => $memo->id]) }}">削除</a>
                                         </div>
                                     </td>
                                 </tr>

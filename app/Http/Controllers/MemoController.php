@@ -67,4 +67,15 @@ class MemoController extends Controller
 
         return redirect('memo/create');
     }
+    
+    public function delete(Request $request)
+    {
+        // 該当するmemo Modelを取得
+        $memo = Memo::find($request->id);
+
+        // 削除する
+        $memo->delete();
+
+        return redirect('memo/create');
+    }
 }
