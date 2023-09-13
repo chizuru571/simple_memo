@@ -1,7 +1,5 @@
 {{-- layouts/memo.blade.phpを読み込む --}}
 @extends('layouts.memo')
-
-
 {{-- memo.blade.phpの@yield('title')に'ニュースの新規作成'を埋め込む --}}
 @section('title', 'メモ一覧・新規登録')
 
@@ -11,6 +9,24 @@
         <div class="row">
             <div class="col-md-8 mx-auto">
                 <h2>メモ一覧・新規登録</h2>
+                <form action="{{ route('memo.create') }}" method="post" enctype="multipart/form-data">
+
+                    @if (count($errors) > 0)
+                        <ul>
+                            @foreach($errors->all() as $e)
+                                <li>{{ $e }}</li>
+                            @endforeach
+                        </ul>
+                    @endif
+                    <div class="form-group row">
+                        <label class="col-md-2">新規登録</label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" name="body" rows="1">{{ old('body') }}</textarea>
+                        </div>
+                    </div>
+                    @csrf
+                    <input type="submit" class="btn btn-primary" value="登録">
+                </form>
             </div>
         </div>
     </div>
