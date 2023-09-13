@@ -10,19 +10,16 @@
             <div class="col-md-8 mx-auto">
                 <h2>メモ一覧・新規登録</h2>
                 <form action="{{ route('memo.create') }}" method="post" enctype="multipart/form-data">
-
-                    @if (count($errors) > 0)
-                        <ul>
-                            @foreach($errors->all() as $e)
-                                <li>{{ $e }}</li>
-                            @endforeach
-                        </ul>
-                    @endif
                     <div class="form-group row">
                         <label class="col-md-2">新規登録</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="body" rows="1">{{ old('body') }}</textarea>
+                            <textarea class="form-control" name="memo" rows="1">{{ old('memo') }}</textarea>
                         </div>
+                    @if (count($errors) > 0)
+                            @foreach($errors->all() as $e)
+                                {{ $e }}
+                            @endforeach
+                    @endif
                     </div>
                     @csrf
                     <input type="submit" class="btn btn-primary" value="登録">

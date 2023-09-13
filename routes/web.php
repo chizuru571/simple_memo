@@ -27,6 +27,3 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::controller(MemoController::class)->group(function() {
-    Route::get('memo/create', 'add')->middleware('auth');
-});

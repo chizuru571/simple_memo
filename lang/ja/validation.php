@@ -113,7 +113,7 @@ return [
     'prohibited_unless' => 'The :attribute field is prohibited unless :other is in :values.',
     'prohibits' => 'The :attribute field prohibits :other from being present.',
     'regex' => 'The :attribute format is invalid.',
-    'required' => ':attribute に入力が必要です。',
+    'required' => ':attributeは必須事項になります。',
     'required_array_keys' => 'The :attribute field must contain entries for: :values.',
     'required_if' => 'The :attribute field is required when :other is :value.',
     'required_unless' => 'The :attribute field is required unless :other is in :values.',
@@ -166,7 +166,7 @@ return [
     */
 
     'attributes' => [
-        'memo_text' => 'メモ'
+        'memo' => 'メモ'
     ],
 
 ];

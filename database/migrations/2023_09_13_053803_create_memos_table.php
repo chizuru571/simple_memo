@@ -13,9 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('memo', function (Blueprint $table) {
+        Schema::create('memos', function (Blueprint $table) {
             $table->id();
-            $table->string('memo_text'); // メモを保存するカラム
+            $table->string('memo');  // コメントを保存するカラム
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('memo');
+        Schema::dropIfExists('memos');
     }
 };
