@@ -42,16 +42,29 @@ class MemoController extends Controller
         }
         return view('memo.create', ['posts' => $posts]);
     }
+    public function edit(Request $request)
+    {
+        // Memo Modelからデータを取得する
+        $memo = Memo::find($request->id);
+        if (empty($memo)) {
+            abort(404);
+        }
+        return view('memo.edit', ['memo_form' => $memo]);
+    }
+
+    public function update(Request $request)
+    {
+        // Validationをかける
+        $this->validate($request, Memo::$rules);
+        // News Modelからデータを取得する
+        $memo = Memo::find($request->id);
+        // 送信されてきたフォームデータを格納する
+        $memo_form = $request->all();
+        unset($memo_form['_token']);
+
+        // 該当するデータを上書きして保存する
+        $memo->fill($memo_form)->save();
+
+        return redirect('memo/create');
+    }
 }
-/*
-
-    public function edit()
-    {
-        return view('memo.edit');
-    }
-
-    public function update()
-    {
-        return redirect('memo/edit');
-    }
-*/

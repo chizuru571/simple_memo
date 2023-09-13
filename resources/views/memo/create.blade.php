@@ -33,8 +33,9 @@
                     <table class="table table-light">
                         <thead>
                             <tr>
-                                <th width="50%">ID</th>
+                                <th width="20%">ID</th>
                                 <th width="50%">メモ</th>
+                                <th width="30%">操作</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -42,6 +43,10 @@
                                 <tr>
                                     <th>{{ $memo->id }}</th>
                                     <td>{{ Str::limit($memo->memo, 100) }}</td>
+                                    <td><div>
+                                            <a href="{{ route('memo.edit', ['id' => $memo->id]) }}">編集</a>
+                                        </div>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
