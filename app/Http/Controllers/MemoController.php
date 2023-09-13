@@ -30,6 +30,18 @@ class MemoController extends Controller
         // リダイレクトする
         return redirect('memo/create');
     }
+    public function index(Request $request)
+    {
+        $cond_title = $request->cond_title;
+        if ($cond_title != '') {
+            // 検索されたら検索結果を取得する
+            $posts = Memo::where('title', $cond_title)->get();
+        } else {
+            // それ以外はすべてのニュースを取得する
+            $posts = Memo::all();
+        }
+        return view('memo.create', ['posts' => $posts]);
+    }
 }
 /*
 

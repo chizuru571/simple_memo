@@ -27,4 +27,27 @@
             </div>
         </div>
     </div>
+        <div class="row">
+            <div class="list-memo col-md-10 mx-auto">
+                <div class="row">
+                    <table class="table table-light">
+                        <thead>
+                            <tr>
+                                <th width="50%">ID</th>
+                                <th width="50%">メモ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($posts as $memo)
+                                <tr>
+                                    <th>{{ $memo->id }}</th>
+                                    <td>{{ Str::limit($memo->memo, 100) }}</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection

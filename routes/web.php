@@ -21,6 +21,7 @@ use App\Http\Controllers\MemoController;
 Route::controller(MemoController::class)->middleware('auth')->group(function() {
     Route::get('memo/create', 'add')->name('memo.add');
     Route::post('memo/create', 'create')->name('memo.create');
+    Route::get('memo/create', 'index')->name('memo.index');
 });
 
 Auth::routes();
