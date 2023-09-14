@@ -33,9 +33,11 @@
                     <table class="table table-light">
                         <thead>
                             <tr>
-                                <th width="10%">ID</th>
-                                <th width="50%">メモ</th>
-                                <th width="20%">編集</th>
+                                <th width="5%">No.</th>
+                                <th width="19%">メモ内容</th>
+                                <th width="19%">作成日時</th>
+                                <th width="19%">更新日時</th>
+                                <th width="19%">編集</th>
                                 <th width="20%">削除</th>
                             </tr>
                         </thead>
@@ -44,6 +46,8 @@
                                 <tr>
                                     <th>{{ $memo->id }}</th>
                                     <td>{{ Str::limit($memo->memo, 100) }}</td>
+                                    <td>{{ $memo->created_at->format('Y年m月d日') }}</td>
+                                    <td>{{ $memo->updated_at->format('Y年m月d日') }}</td>
                                     <td><div>
                                             <a href="{{ route('memo.edit', ['id' => $memo->id]) }}">編集</a>
                                         </div>
