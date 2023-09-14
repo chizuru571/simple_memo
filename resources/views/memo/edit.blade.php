@@ -19,6 +19,9 @@
                     </div>
                     <div class="form-group row">
                         <div class="col-md-10">
+                            <a href="{{ route('memo.create')}}">
+                                 <input type="back" class="btn btn-success" value="戻る">
+                            </a>
                             <input type="hidden" name="id" value="{{ $memo_form->id }}">
                             @csrf
                             <input type="submit" class="btn btn-primary" value="修正">

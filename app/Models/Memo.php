@@ -11,6 +11,6 @@ class Memo extends Model
     protected $guarded = array('id');
 
     public static $rules = array(
-        'memo' => 'required',
+        'memo' => 'required|max:100',
     );
 }
