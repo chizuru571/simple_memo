@@ -71,6 +71,7 @@
                             </li>
                             @endguest
                         </ul>
+                            <a class="navbar-brand" href="{{ url('/register') }}">新規登録</a>
                     </div>
                 </div>
             </nav>
