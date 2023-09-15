@@ -13,18 +13,21 @@
             <div class="col-md-8 mx-auto">
                 <form action="{{ route('memo.create') }}" method="post" enctype="multipart/form-data">
                     <div class="form-group row">
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <textarea class="form-control" name="memo" rows="1">{{ old('memo') }}</textarea>
                         </div>
                         <div class="col-md-2">
                             <input type="submit" class="btn btn-primary" value="登録">
                         </div>
+            <div class="col-md-8">
                     @if (count($errors) > 0)
                             @foreach($errors->all() as $e)
                                 {{ $e }}
                             @endforeach
                     @endif
                     </div>
+                        </div>
+                    @csrf
                 </form>
             </div>
         </div>
