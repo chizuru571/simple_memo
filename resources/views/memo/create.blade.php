@@ -8,11 +8,16 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 mx-auto">
+            <h5>新規登録<h5>
+            </div>
+            <div class="col-md-8 mx-auto">
                 <form action="{{ route('memo.create') }}" method="post" enctype="multipart/form-data">
                     <div class="form-group row">
-                        <label class="col-md-2">新規登録</label>
-                        <div class="col-md-10">
+                        <div class="col-md-4">
                             <textarea class="form-control" name="memo" rows="1">{{ old('memo') }}</textarea>
+                        </div>
+                        <div class="col-md-2">
+                            <input type="submit" class="btn btn-primary" value="登録">
                         </div>
                     @if (count($errors) > 0)
                             @foreach($errors->all() as $e)
@@ -20,24 +25,23 @@
                             @endforeach
                     @endif
                     </div>
-                    @csrf
-                    <input type="submit" class="btn btn-primary" value="登録">
                 </form>
             </div>
         </div>
     </div>
         <div class="row">
-            <div class="list-memo col-md-10 mx-auto">
+            <div class="list-memo col-md-8 mx-auto">
+            <hr>
                 <div class="row">
                     <table class="table table-light">
                         <thead>
                             <tr>
                                 <th width="5%">No.</th>
-                                <th width="19%">メモ内容</th>
-                                <th width="19%">作成日時</th>
-                                <th width="19%">更新日時</th>
-                                <th width="19%">編集</th>
-                                <th width="19%">削除</th>
+                                <th width="20%">メモ内容</th>
+                                <th width="20%">作成日時</th>
+                                <th width="20%">更新日時</th>
+                                <th width="5%"></th>
+                                <th width="5%"></th>
                             </tr>
                         </thead>
                         <tbody>
