@@ -22,7 +22,7 @@
             <div class="col-md-8">
                     @if (count($errors) > 0)
                             @foreach($errors->all() as $e)
-                                {{ $e }}
+                                <font color="red">{{ $e }}</font>
                             @endforeach
                     @endif
                     </div>
@@ -40,7 +40,7 @@
                         <thead>
                             <tr>
                                 <th width="5%">No.</th>
-                                <th width="20%">メモ内容</th>
+                                <th width="30%">メモ内容</th>
                                 <th width="20%">作成日時</th>
                                 <th width="20%">更新日時</th>
                                 <th width="5%"></th>
@@ -56,13 +56,13 @@
                                     <td>{{ $memo->updated_at->format('Y年m月d日') }}</td>
                                     <td><div>
                                             <a href="{{ route('memo.edit', ['id' => $memo->id]) }}">
-                                                <input type="edit" class="btn btn-success" value="編集">
+                                                <input type="button" class="btn btn-success" value="編集">
                                             </a>
                                         </div>
                                     </td>
                                     <td><div>
                                             <a href="{{ route('memo.delete', ['id' => $memo->id]) }}">
-                                                <input type="delete" class="btn btn-danger" value="削除" onclick='return confirm("本当に削除してよろしいですか？")'>
+                                                <input type="button" class="btn btn-danger" value="削除" onclick='return confirm("本当に削除してよろしいですか？")'>
                                             </a>
                                         </div>
                                     </td>
